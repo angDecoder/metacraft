@@ -21,38 +21,5 @@ The `MyToken` smart contract is a basic Solidity contract designed to manage a s
 
 2. `burn(address Addr, uint Value)`: This function allows for the burning (destruction) of tokens from a specified address. It checks if the address has a sufficient balance to burn the specified number of tokens and then updates the total supply and balance accordingly.
 
-## Usage
 
-You can interact with this contract to mint and burn tokens. To do so, deploy the contract on the Ethereum blockchain and call the `mint` and `burn` functions with the desired parameters.
-
-## Solidity Code
-
-```
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
-
-contract MyToken {
-
-    // public variables here
-    string public _tokenName = "Pankaj";
-    string public _tokenAbbrv = "Sharma";
-    uint public _totalSupply = 0;
-
-    // mapping variable here
-    mapping(address => uint) public bal;
-
-    // mint function
-    function mint(address Addr, uint Value) public {
-        _totalSupply += Value;
-        bal[Addr] += Value;
-    }
-
-    // burn function
-    function burn(address Addr, uint Value) public {
-        if(bal[Addr] >= Value) {
-            _totalSupply -= Value;
-            bal[Addr] -= Value;
-    }
-    }
-}
 ```
